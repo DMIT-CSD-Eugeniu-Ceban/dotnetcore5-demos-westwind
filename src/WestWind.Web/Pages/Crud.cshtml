@@ -33,7 +33,7 @@
     <input type="hidden" name="selectedCategoryId" value="@Model.SelectedCategoryId">
     <button type="submit" formaction="/Query" title="Back to Query Page" name="buttonPressed" value="CrudBackToQuery">Query Page</button>
 
-@{
+@{ 
     if(Model.Product != null)
     {
         <label>Product Id
@@ -63,7 +63,7 @@
         <i>Categories</i>
         <select name="categoryId">
             <option value="0">select ...</option>
-            @foreach (var item in Model.SelectListOfCatagories)
+            @foreach (var item in Model.SelectListOfCatagories) 
             {
                     if (Model.Product.CategoryId == item.CategoryId)
                     {

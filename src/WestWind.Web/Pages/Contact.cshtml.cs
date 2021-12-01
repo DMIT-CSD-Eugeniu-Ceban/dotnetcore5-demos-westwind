@@ -15,7 +15,7 @@ namespace MyApp.Namespace
         public string Email{get;set;}
         public List<string> SelectListOfSubjects{get;set;}
         public int SelectedSubjectId {get;set;}
-        public string MessageBody{get;set;}
+        public string MessageBody{get;set;} 
         public bool ActiveMember{get;set;}
 
         public string ButtonPressed {get; set;}
@@ -37,13 +37,13 @@ namespace MyApp.Namespace
 
         public IActionResult OnPost(string buttonPressed, string messageTitle, string email, string selectedSubjectId, 
             string messageBody, string activeMember)
-        {
-            try
+        {   
+            try 
             {
                 Console.WriteLine($"ContactModel: OnPost");
                 ButtonPressed = buttonPressed;
                 if(ButtonPressed == "Clear")
-                    return RedirectToPage("Contact");
+                    return RedirectToPage("Contact");  
                 PopulateSelectLists();
                 MessageTitle = messageTitle;
                 Email = email;
@@ -59,7 +59,7 @@ namespace MyApp.Namespace
                 {
                     ActiveMember = true;
                 }
-                if (string.IsNullOrEmpty(email) ||
+                if (string.IsNullOrEmpty(email) ||+
                 SelectedSubjectId == 0 ||
                 string.IsNullOrEmpty(messageTitle) ||
                 string.IsNullOrEmpty(messageBody))
@@ -76,7 +76,7 @@ namespace MyApp.Namespace
             }
         }
 
-        private void PopulateSelectLists()
+        private void PopulateSelectLists() 
         {
             try
             {

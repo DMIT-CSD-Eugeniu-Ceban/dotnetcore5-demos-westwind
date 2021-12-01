@@ -11,7 +11,7 @@ namespace MyApp.Namespace
 {
     public class QueryModel : PageModel
     {
-        private readonly WestWindServices Services;
+        private readonly WestWindServices Services; 
         public QueryModel(WestWindServices services)
         {
             Services = services;

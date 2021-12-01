@@ -60,7 +60,7 @@ namespace WestWind.Services
         
         #region READ - Retrieve, Edit, Add, Delete
         //added in Ex06
-        public Product Retrieve(int productId)
+        public Product Retrieve(int productId) 
         {
             Console.WriteLine($"WestWindServices: Retrieve; productId= {productId}");
             return Context.Products.Find(productId);
@@ -69,9 +69,9 @@ namespace WestWind.Services
         public void Edit(Product item)
         {
             Console.WriteLine($"WestWindServices: Edit; productId= {item.ProductId}");
-            var existing = Context.Entry(item);
+            var existing = Context.Entry(item); 
             existing.State = EntityState.Modified;
-            Context.SaveChanges();
+            Context.SaveChanges(); 
         }
         //added in Ex06
         public void Add(Product item)

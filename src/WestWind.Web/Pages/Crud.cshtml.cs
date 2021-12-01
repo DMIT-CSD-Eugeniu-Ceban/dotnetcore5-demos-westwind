@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using WestWind.Entities;
 using WestWind.Services;
+using WestWind.Entities;
 
 namespace MyApp.Namespace
 {
@@ -26,7 +26,7 @@ namespace MyApp.Namespace
         public List<Category> SelectListOfCatagories {get;set;}
         public List<Supplier> SelectListOfSuppliers {get;set;}
 
-        public void OnGet()
+        public void OnGet() 
         {
             try
             {
@@ -56,7 +56,7 @@ namespace MyApp.Namespace
                 if(!string.IsNullOrEmpty(supplierId))
                     Product.SupplierId = int.Parse(supplierId);
                 if(!string.IsNullOrEmpty(categoryId))
-                    Product.CategoryId = int.Parse(categoryId);
+                    Product.CategoryId = int.Parse(categoryId); 
                 Product.QuantityPerUnit = quantityPerUnit;
                 if(!string.IsNullOrEmpty(minimumOrderQuantity))
                     Product.MinimumOrderQuantity = short.Parse(minimumOrderQuantity);
@@ -79,7 +79,7 @@ namespace MyApp.Namespace
                         throw new ArgumentException("CategoryId cannot be 0");
                     if(string.IsNullOrEmpty(quantityPerUnit))
                         throw new ArgumentException("QuantityPerUnit cannot be empty");
-                    Services.Edit(Product);
+                    Services.Edit(Product); 
                     SuccessMessage = "Update Successful";
                 }
                 else if(ButtonPressed == "Add"){
@@ -95,7 +95,7 @@ namespace MyApp.Namespace
                     SuccessMessage = "Add Successful";
                 }
                 else if(ButtonPressed == "CrudDelete"){
-                    Services.Delete(Product);
+                    Services.Delete(Product); 
                     Product = new Product();
                     SuccessMessage = "Delete Successful";
                 }
