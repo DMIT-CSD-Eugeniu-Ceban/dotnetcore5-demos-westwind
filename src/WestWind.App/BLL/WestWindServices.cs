@@ -62,14 +62,19 @@ namespace WestWind.Services
         //added in Ex06
         public Product Retrieve(int productId) 
         {
-            Console.WriteLine($"WestWindServices: Retrieve; productId= {productId}");
+            Console.WriteLine($"WestWindServices: Retrieve; productId = {productId}");
             return Context.Products.Find(productId);
         }
         //added in Ex06
         public void Edit(Product item)
         {
+<<<<<<< HEAD
             Console.WriteLine($"WestWindServices: Edit; productId= {item.ProductId}");
             var existing = Context.Entry(item); 
+=======
+            Console.WriteLine($"WestWindServices: Edit; productId = {item.ProductId}");
+            var existing = Context.Entry(item);
+>>>>>>> c79c033dc58a0e001cbb49dad91b51fc9b2537ae
             existing.State = EntityState.Modified;
             Context.SaveChanges(); 
         }
